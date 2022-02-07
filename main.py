@@ -1,11 +1,15 @@
+import yfinance as yf
+from pandas_datareader import data as pdr
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+msft = yf.Ticker("MSFT")
+
+# get stock info
+print(msft.info)
+
+data = yf.download("MSFT AAPL IBM", start="2021-01-01", end="2021-12-30")
+
+print(data)
 
 
 
-if __name__ == '__main__':
-
-    print_hi('PyCharm')
 
